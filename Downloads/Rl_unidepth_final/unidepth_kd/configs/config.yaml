@@ -2,10 +2,24 @@
 
 # Data Configuration
 data:
-  dataset_type: 'mock'  # 'mock', 'nyu', 'kitti'
-  data_dir: './data'
+  train_dataset: 'nyu'      # 'mock', 'nyu', 'kitti'
+  val_dataset: 'nyu'        # For validation
+  test_dataset: 'kitti'     # For testing/evaluation
+  
+  # Dataset directories
+  nyu_dir: './data/nyu_depth_v2'
+  kitti_dir: './data/kitti'
+  
+  # Data loading
   img_size: 384
   num_workers: 4
+  train_batch_size: 8
+  val_batch_size: 16
+  test_batch_size: 16
+  
+  # Augmentation
+  augment_train: true
+  augment_val: false
 
 # Model Configuration
 student_model:
